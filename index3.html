@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+</head>
+<body>
+    <h1>User List</h1>
+
+    <!-- Principal Section -->
+    <h2>Principal</h2>
+    {% if principal %}
+        <p>Name: {{ principal.name }}</p>
+        <p>Email: {{ principal.email }}</p>
+    {% else %}
+        <p>No principal found.</p>
+    {% endif %}
+
+    <!-- Teachers Section -->
+    <h2>Teachers</h2>
+    {% if teachers %}
+        <ul>
+            {% for teacher in teachers %}
+                <li>{{ teacher.name }} - {{ teacher.email }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No teachers found.</p>
+    {% endif %}
+
+    <!-- Students Section -->
+    <h2>Students</h2>
+    {% if students %}
+        <ul>
+            {% for student in students %}
+                <li>{{ student.name }} - {{ student.email }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No students found.</p>
+    {% endif %}
+
+</body>
+</html>
